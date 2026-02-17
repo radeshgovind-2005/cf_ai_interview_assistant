@@ -17,7 +17,16 @@
 	"compatibility_flags": [
 		"nodejs_compat"
 	],
-	"ai": {"binding": "AI"}
+	"ai": {
+		"binding": "AI"
+	},
+	"kv_namespaces": [
+		{
+			"binding": "CHAT_HISTORY",
+			"id": "629bfed864b1400cb2edd52e0ecc3fb2",
+			"remote": true
+		}
+	]
 	/**
 	 * Smart Placement
 	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
