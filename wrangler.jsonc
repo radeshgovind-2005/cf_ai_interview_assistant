@@ -20,13 +20,6 @@
 	"ai": {
 		"binding": "AI"
 	},
-	"kv_namespaces": [
-		{
-			"binding": "CHAT_HISTORY",
-			"id": "629bfed864b1400cb2edd52e0ecc3fb2",
-			"remote": true
-		}
-	],
 	"durable_objects": {
     "bindings": [
       {
@@ -37,8 +30,8 @@
   },
 	"migrations": [
     {
-      "tag": "v1", // Any string name works here
-      "new_classes": ["ChatSession"]
+      "tag": "v1",
+      "new_sqlite_classes": ["ChatSession"]
     }
   ]
 	/**

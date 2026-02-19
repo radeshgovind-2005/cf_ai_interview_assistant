@@ -50,6 +50,10 @@ app.post('/api/chat', async (c) => {
     }
 
     const data = await doResponse.json()
+    
+    c.header('X-Edge-Location', `${city}, ${country}`)
+    c.header('X-Inference-Model', 'llama-3.3-70b-instruct')
+    
     return c.json(data)
 
   } catch (error) {

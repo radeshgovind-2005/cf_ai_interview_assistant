@@ -25,13 +25,21 @@ async function send() {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ message: text, sessionId })
-        });
+        })
+        if (!req.ok) throw new Error("API Error")
+        
+        const edgeLocation = req.headers.get('X-Edge-Location') || 'Unknown Edge'
+        const model = req.headers.get('X-Inference-Model') || 'Workers AI'
+        
+        const data = await req.json()
 
-        if (!req.ok) throw new Error("API Error");
-        const data = await req.json();
-
-        // UI Update: AI Message
-        addMessage(data.response, 'ai');
+        const telemetryHtml = `
+            <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 8px; border-top: 1px solid var(--border); padding-top: 4px;">
+                ⚡ Served from: ${edgeLocation} |  Model: ${model}
+            </div>
+        `;
+        
+        addMessage(data.response + telemetryHtml, 'ai');
     } catch (e) {
         addMessage("Error: Connection lost with Workers AI.", 'ai');
     }
