@@ -7,7 +7,11 @@ This project goes beyond a simple LLM wrapper. It is a stateful, edge-deployed d
 ## 🎥 Live Demo & Deployment
 
 * **🟢 Live Application:** [Web App Link](https://cold-resonance-d00c.radesh-govind.workers.dev)
-* **📼 Video Walkthrough:** [INSERT LINK TO YOUTUBE/LOOM VIDEO HERE]
+* **📼 Video Walkthrough:** 
+
+https://github.com/user-attachments/assets/eb9696f4-1b27-43c0-bc19-07a7eba9a12e
+
+
 
 ---
 
